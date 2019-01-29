@@ -1,0 +1,80 @@
+Istruzioni Deploy Fatturazione Elettronica su InvoicePlane
+
+1 Requisiti
+
+  Per poter procedere al deploy è necessario:
+  
+    • Un’istallazione pulita di InvoicePlane.
+    • Accesso ftp al server dove è stato installato.
+    • Accesso amministratore al database SQL di InvoicePlane.
+
+1.1 Note
+
+  E necessario che il server sia dotato di PHP5.1+ (la stessa versione che usa InvoicePlane) ed il pacchetto SimpleXML (generalmente preinstallato nella maggioranza delle distribuzioni Apache).
+
+2 Importare libreria xml
+
+  Spostare il contenuto della cartella xml lib dentro la cartella application/modules/invoices/controllers/ sul server remoto.
+  Deve essere spostato solo il contenuto: la cartella xml lib non deve comparire sul server.
+
+  Quindi la cartella sul server deve contenere solo i seguenti file e cartelle:
+
+    • HeaderData/
+    • BodyData/
+    • Ajax.php
+    • Cron.php
+    • Fattura.php
+    • Invoices.php
+    • Recurring.php
+
+3 Modifica File
+
+  E poi necessario sostituire alcuni file di sistema.
+  Nella cartella modules qui allegata sono presenti i nuovi file.
+  Vanno sostiuiti a quelli presenti nel server (mantenendo la stessa strutture delle cartelle) in application/modules nel server remoto. La struttura della cartella la seguente:
+  
+    modules/
+    clients
+    models
+    Mdl_clients.php
+    views
+    form.php
+    view.php
+    invoices
+    controllers
+    Invoices.php
+    views
+    partial_invoice_table.php
+    view.php
+    users
+    models
+    Mdl_users.php
+    views
+    form.php
+    
+Quindi ad esempio:
+
+  • modules/clients/models/Mdl clients.php della cartella allegata va
+  messo al posto di application/modules/clients/models/Mdl clients.php
+  nel server remoto.
+  • modules/clients/views//form.php della cartella allegata va messo al
+  posto di application/modules/clients/views/form.php nel server
+  remoto.
+  • . . .
+
+E così via per tutti i rimanenti file.
+
+4 Patch database
+
+  L’ultima azione necessaria è una modifica al database, è necessario accedere al DB di InvoicePlane ed eseguire il seguente script sql:
+  
+    1 alter table 'ip_clients'
+    2 add client_cod_interscambio varchar (7);
+    3 alter table 'ip_clients'
+    4 add client_pec varchar (255);
+    5 alter table 'ip_users'
+    6 add user_cod_interscambio varchar (7);
+    7 alter table 'ip_users'
+    8 add user_pec varchar (255);
+
+La versione .sql dello script è allegata.
