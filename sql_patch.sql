@@ -6,3 +6,7 @@ alter table `ip_users`
 add user_cod_interscambio varchar(7);
 alter table `ip_users`
 add user_pec varchar(255);
+alter table `ip_invoices`
+add invoice_importo_bollo varchar(255);
+alter table `ip_invoices`
+add invoice_asolvimento_bollo varchar(255);
