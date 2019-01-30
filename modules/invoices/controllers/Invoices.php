@@ -99,7 +99,7 @@ class Invoices extends Admin_Controller
             $client->client_pec
         );
 
-
+		$emittenteRF = $emittente->user_regime_fiscale_cod != null ? $emittente->user_regime_fiscale_cod : "RF01";
         $cedentePrest = new CedentePrestatore(
             new DatiAnagrafici(
                 new IdFiscaleIVAClass($emittente->user_country, $emittenteVatId),
@@ -110,8 +110,8 @@ class Invoices extends Admin_Controller
                 
                 /*@todo*/
                 
-				
-                RegimeFiscaleClass::Forfettario
+				$emittenteRF
+                //RegimeFiscaleClass::Forfettario
             ),
             /**
              * @todo

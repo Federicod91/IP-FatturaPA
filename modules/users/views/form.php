@@ -350,6 +350,22 @@ $cv = $this->controller->view_data["custom_values"];
                                     <input type="email" name="user_pec" id="user_pec" class="form-control"
                                            value="<?php echo $this->mdl_users->form_value('user_pec', true); ?>">
                                 </div>
+								
+								<div class="form-group">
+                                    <label for="user_regime_fiscale_cod">
+                                        Codice regime fiscale
+                                    </label>
+										<input type="text" maxlength="4" name="user_regime_fiscale_cod" id="user_regime_fiscale_cod" class="form-control"
+                                           value="<?php echo $this->mdl_users->form_value('user_regime_fiscale_cod', true); ?>">
+                                </div>
+								
+								<div class="form-group">
+                                    <label for="user_regime_fiscale_desc">
+                                        Regime fiscale
+                                    </label>
+										<input type="text" maxlength="255" name="user_regime_fiscale_desc" id="user_regime_fiscale_desc" class="form-control"
+                                           value="<?php echo $this->mdl_users->form_value('user_regime_fiscale_desc', true); ?>">
+                                </div>
 
                                 <!-- Custom fields -->
                                 <?php foreach ($custom_fields as $custom_field): ?>

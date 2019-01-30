@@ -10,3 +10,7 @@ alter table `ip_invoices`
 add invoice_importo_bollo varchar(255);
 alter table `ip_invoices`
 add invoice_asolvimento_bollo varchar(255);
+alter table `ip_users`
+add user_regime_fiscale_cod varchar(4);
+alter table `ip_users`
+add user_regime_fiscale_desc varchar(255);

@@ -119,6 +119,14 @@ class Mdl_Users extends Response_Model
                 'field' => 'user_pec',
                 'label' => 'Indirizzo Pec'
             ),
+			'user_regime_fiscale_cod' => array(
+                'field' => 'user_regime_fiscale_cod',
+                'label' => 'Codice regime fiscale'
+            ),
+			'user_regime_fiscale_desc' => array(
+                'field' => 'user_regime_fiscale_desc',
+                'label' => 'Regime fiscale'
+            ),
             'user_vat_id' => array(
                 'field' => 'user_vat_id'
             ),
@@ -205,6 +213,14 @@ class Mdl_Users extends Response_Model
             'user_pec' => array(
                 'field' => 'user_pec',
                 'label' => 'Indirizzo Pec'
+            ),
+			'user_regime_fiscale_cod' => array(
+                'field' => 'user_regime_fiscale_cod',
+                'label' => 'Codice regime fiscale'
+            ),
+			'user_regime_fiscale_desc' => array(
+                'field' => 'user_regime_fiscale_desc',
+                'label' => 'Regime fiscale'
             ),
             'user_vat_id' => array(
                 'field' => 'user_vat_id'

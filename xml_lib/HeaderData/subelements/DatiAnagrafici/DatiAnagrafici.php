@@ -8,7 +8,7 @@
 
 require_once "utils/AnagraficaClass.php";
 require_once "utils/IdFiscaleIVAClass.php";
-require_once "utils/RegimeFiscaleClass.php";
+//require_once "utils/RegimeFiscaleClass.php";
 
 class DatiAnagrafici {
     public $IdFiscaleIVA;
